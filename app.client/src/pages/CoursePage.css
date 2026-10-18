@@ -1,0 +1,699 @@
+/* ========================================
+   PAGE LAYOUT AND HEADER
+   ======================================== */
+.course-page-container {
+    display: flex;
+    background-color: #fbf6e9;
+    min-height: 100vh;
+}
+
+.course-page {
+    flex: 1;
+    padding: 2rem 3rem;
+    max-width: 1500px;
+}
+
+.course-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 2.5rem;
+}
+
+.course-header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.back-btn {
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-btn:hover {
+    background-color: #ecf6c5;
+}
+
+.course-title-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.course-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e1e1e;
+    margin: 0;
+}
+
+.course-teacher {
+    color: #64748b;
+    margin: 6px 0 0;
+}
+
+.course-status {
+    border-radius: 999px;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.course-status--open {
+    background: #eafaf2;
+    color: #118b50;
+}
+
+.course-status--closed {
+    background: #fff7ed;
+    color: #c2410c;
+}
+
+.course-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.course-join-code {
+    background-color: #eafaf2;
+    color: #118b50;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.secondary-action-btn {
+    border: 1px solid #d1d5db;
+    background: #fff;
+    color: #111827;
+    border-radius: 8px;
+    padding: 0.6rem 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.secondary-action-btn:hover {
+    background: #f9fafb;
+}
+
+.danger-action-btn {
+    border: 1px solid #fecaca;
+    background: #fff;
+    color: #b91c1c;
+    border-radius: 8px;
+    padding: 0.6rem 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.danger-action-btn:hover {
+    background: #fff1f2;
+}
+
+/* ========================================
+   TABS AND TOP ACTIONS
+   ======================================== */
+.course-tabs {
+    display: flex;
+    justify-content: start;
+    gap: 12px;
+}
+
+.tab {
+    padding: 0.6rem 1.2rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background-color: transparent;
+    font-weight: 600;
+    color: #4a4a4a;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tab:hover {
+    border-color: #ccc;
+}
+
+.tab.active {
+    border-color: #111;
+    color: #111;
+    background-color: #fff;
+}
+
+.tabs-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0 1rem;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.upload-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #5db996;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.4rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.upload-btn:hover {
+    background-color: #118b50;
+}
+
+.upload-btn:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* ========================================
+   MODALS AND FORM CONTROLS
+   ======================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #18230f;
+}
+
+.modal-close {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+    color: #18230f;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #374151;
+}
+
+.form-group textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.btn-cancel {
+    background: #f3f4f6;
+    color: #374151;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-confirm {
+    background: #5db996;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-danger-confirm {
+    background: #dc2626;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.btn-danger-confirm:hover {
+    background: #b91c1c;
+}
+
+.confirm-modal {
+    max-width: 440px;
+}
+
+.confirm-modal-text {
+    color: #4b5563;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.confirm-modal-error {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    color: #b91c1c;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    margin: 0.85rem 0 0;
+    padding: 0.7rem 0.85rem;
+}
+
+/* ========================================
+   COURSE EDITING, RESOURCES, AND MESSAGES
+   ======================================== */
+.course-edit-box,
+.resource-upload-box,
+.course-empty-state,
+.course-message {
+    background: #fff;
+    border: 1px solid #e9f4e5;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.course-edit-box {
+    display: grid;
+    gap: 16px;
+}
+
+.course-edit-box label,
+.resource-upload-box label {
+    display: grid;
+    gap: 8px;
+    color: #18230f;
+    font-weight: 700;
+}
+
+.course-edit-box input,
+.course-edit-box textarea,
+.resource-upload-box input {
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font: inherit;
+}
+
+.course-edit-box textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.course-edit-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.resource-upload-box {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* ========================================
+   ASSIGNMENTS, SUBMISSIONS, AND GRADES
+   ======================================== */
+.assignment-list,
+.grades-panel {
+    display: grid;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.assignment-panel {
+    display: grid;
+    gap: 14px;
+}
+
+.assignment-files,
+.assignment-toolbar,
+.support-upload-form,
+.submission-form,
+.grade-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.submission-form {
+    align-items: stretch;
+}
+
+.note-snapshot-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.note-snapshot-form select {
+    min-width: min(100%, 260px);
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 9px 10px;
+}
+
+.submission-form textarea {
+    min-height: 90px;
+    min-width: min(100%, 420px);
+    flex: 1;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 10px 12px;
+}
+
+.submission-form input,
+.support-upload-form input,
+.grade-form input {
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 9px 10px;
+}
+
+.grade-saved-indicator {
+    color: #15803d;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 800;
+}
+
+.file-link-btn {
+    border: 1px solid #d1d5db;
+    background: #fff;
+    color: #111827;
+    border-radius: 8px;
+    padding: 8px 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.file-link-btn:hover {
+    background: #f9fafb;
+}
+
+.grade-note,
+.final-grade-box {
+    background: #f0fdf4;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+/* ========================================
+   NOTE SNAPSHOT PREVIEW / READER
+   ======================================== */
+.note-snapshot-preview {
+    width: 100%;
+    border: 1px solid #dbe7d8;
+    background: #fbfff9;
+    border-radius: 8px;
+    padding: 14px;
+    text-align: left;
+    cursor: pointer;
+    display: grid;
+    gap: 10px;
+}
+
+.note-snapshot-preview:hover {
+    border-color: #5db996;
+    box-shadow: 0 8px 20px rgba(24, 35, 15, 0.08);
+}
+
+.note-snapshot-preview__header {
+    display: grid;
+    gap: 3px;
+}
+
+.note-snapshot-preview__header span,
+.snapshot-modal-label {
+    color: #64748b;
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.note-snapshot-preview__header strong {
+    color: #18230f;
+    font-size: 1rem;
+}
+
+.note-snapshot-preview__body {
+    max-height: 155px;
+    overflow: hidden;
+    color: #334155;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 10px;
+}
+
+.note-snapshot-preview__open {
+    color: #118b50;
+    font-weight: 800;
+}
+
+.snapshot-modal {
+    max-width: 900px;
+    max-height: 86vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.snapshot-reader {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #fffdf8;
+    padding: 18px;
+    overflow-y: auto;
+    color: #1f2937;
+    line-height: 1.65;
+}
+
+.snapshot-reader h2,
+.snapshot-reader h3,
+.snapshot-reader h4,
+.note-snapshot-preview__body h2,
+.note-snapshot-preview__body h3,
+.note-snapshot-preview__body h4 {
+    margin: 10px 0 6px;
+    color: #18230f;
+}
+
+.snapshot-reader p,
+.note-snapshot-preview__body p {
+    margin: 6px 0;
+    color: inherit;
+}
+
+.snapshot-bullet,
+.snapshot-numbered {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+.snapshot-bullet span,
+.snapshot-numbered span {
+    color: #118b50;
+    font-weight: 800;
+    min-width: 18px;
+}
+
+.snapshot-line-break {
+    height: 8px;
+}
+
+.snapshot-more {
+    color: #64748b;
+    font-style: italic;
+}
+
+/* Assignment deadline state shown when submissions are closed. */
+.deadline-reached-state {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    color: #7f1d1d;
+}
+
+.deadline-reached-btn {
+    background: #dc2626;
+    color: #fff;
+    border: 0;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-weight: 700;
+    cursor: not-allowed;
+    opacity: 0.85;
+}
+
+.submissions-list {
+    display: grid;
+    gap: 12px;
+}
+
+.submission-row,
+.grade-row,
+.student-grade-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 14px;
+}
+
+.submission-row {
+    display: grid;
+    grid-template-columns: minmax(180px, 260px) 1fr;
+    gap: 16px;
+}
+
+.submission-row p,
+.grade-row p {
+    color: #64748b;
+    margin: 4px 0;
+}
+
+.submission-detail {
+    display: grid;
+    gap: 10px;
+}
+
+.missing-submission {
+    color: #b91c1c;
+    font-weight: 700;
+}
+
+.student-grade-card summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.grade-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.grade-value {
+    min-width: 64px;
+    display: flex;
+    justify-content: center;
+    color: #18230f;
+    font-weight: 800;
+}
+
+.course-empty-state {
+    color: #64748b;
+}
+
+.course-message {
+    background: #f0fdf4;
+    color: #166534;
+}
+
+/* ========================================
+   RESPONSIVE LAYOUT
+   ======================================== */
+@media (max-width: 900px) {
+    .course-page {
+        padding: 1.25rem;
+    }
+
+    .course-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .course-actions {
+        justify-content: flex-start;
+    }
+
+    .submission-row {
+        grid-template-columns: 1fr;
+    }
+}

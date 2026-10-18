@@ -1,0 +1,102 @@
+/* Fixed global navigation column. */
+.sidebar {
+    width: 300px;
+    height: 100vh;
+    background: #ffffff;
+    border-right: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 2rem 1.5rem;
+    font-size: 1.1rem; /* makes all sidebar text slightly larger */
+}
+
+/* App logo/brand block. */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 3rem;
+}
+
+.logo-circle {
+    background-color: #5DB996;
+    color: white;
+    font-weight: bold;
+    font-size: 1.3rem; /* was 1.1rem */
+    width: 40px; /* slightly larger */
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Main route links. */
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* more space between icon and text */
+    text-decoration: none;
+    color: #222;
+    padding: 0.9rem 1.2rem; /* more vertical & horizontal padding */
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+    font-size: 1.1rem; /* makes text in items bigger */
+}
+
+    .menu-item svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .menu-item:hover {
+        background-color: #E3F0AF; /* Yellow hover */
+    }
+
+    .menu-item.active {
+        background-color: #5DB996;
+        color: white;
+        font-weight: 600;
+}
+
+/* Current user/profile and logout area at the bottom. */
+.sidebar-user-actions {
+    border-top: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
+.sidebar-account-link span {
+    display: grid;
+    gap: 0.1rem;
+}
+
+.sidebar-account-link small {
+    font-size: 0.78rem;
+    font-weight: 500;
+    opacity: 0.72;
+    text-transform: capitalize;
+}
+
+.sidebar-logout-btn {
+    background: transparent;
+    border: 0;
+    width: 100%;
+}
+
+.sidebar-logout-btn:hover {
+    background-color: #fee2e2;
+    color: #991b1b;
+}

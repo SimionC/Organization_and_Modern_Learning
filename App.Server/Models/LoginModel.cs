@@ -1,0 +1,9 @@
+﻿// Purpose: login payload model.
+// Contract: email + plaintext password used for hash comparison in AuthService.
+
+namespace App.Server.Models;
+public class LoginModel
+{
+    public string Email { get; set; } = string.Empty; 
+    public string Password { get; set; } = string.Empty;
+}
